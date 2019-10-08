@@ -1,0 +1,323 @@
+{
+    "title": "my config",
+    "rules": [
+        {
+            "description": "my config",
+            "manipulators": [
+                {
+                    "description": "c-j to c-s-j on iTerm2",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": ["control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "j",
+                            "modifiers": ["control", "shift"]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": ["^com\\.googlecode\\.iterm2$"]
+                        }
+                    ]
+                },
+                {
+                    "description": "escape to tilde (MD650L)",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "escape",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "grave_accent_and_tilde"
+                        }
+                    ],
+                    "conditions": [{ "type": "device_if", "identifiers": [{ "vendor_id": 1241, "product_id": 626 }] }]
+                },
+                {
+                    "description": "left control to escape (MD650L)",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_control"
+                    },
+                    "to": [
+                        {
+                            "key_code": "escape"
+                        }
+                    ],
+                    "conditions": [{ "type": "device_if", "identifiers": [{ "vendor_id": 1241, "product_id": 626 }] }]
+                },
+                {
+                    "description": "capslock to left control",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "caps_lock",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_control"
+                        }
+                    ]
+                },
+                {
+                    "description": "swap left alt and cmd (MD650L) (1/2)",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_gui",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_alt"
+                        }
+                    ],
+                    "conditions": [{ "type": "device_if", "identifiers": [{ "vendor_id": 1241, "product_id": 626 }] }]
+                },
+                {
+                    "description": "swap left alt and cmd (MD650L) (2/2)",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_alt",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_gui"
+                        }
+                    ],
+                    "conditions": [{ "type": "device_if", "identifiers": [{ "vendor_id": 1241, "product_id": 626 }] }]
+                },
+                {
+                    "description": "C-[ to escape",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": {
+                            "mandatory": ["control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "escape"
+                        }
+                    ]
+                },
+                {
+                    "description": "C-h to backspace on Office",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": ["control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_or_backspace"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "file_paths": ["Applications.*(Word)\\.app"]
+                        }
+                    ]
+                },
+                {
+                    "description": "C-n to ↓ on Office",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "n",
+                        "modifiers": {
+                            "mandatory": ["control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "down_arrow"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "file_paths": ["Applications.*(Word)\\.app"]
+                        }
+                    ]
+                },
+                {
+                    "description": "C-p to ↑ on Office",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "p",
+                        "modifiers": {
+                            "mandatory": ["control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "up_arrow"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "file_paths": ["Applications.*(Word)\\.app"]
+                        }
+                    ]
+                },
+                {
+                    "description": "C-b to ← on Office",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "b",
+                        "modifiers": {
+                            "mandatory": ["control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "file_paths": ["Applications.*(Word)\\.app"]
+                        }
+                    ]
+                },
+                {
+                    "description": "C-f to → on Office",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": {
+                            "mandatory": ["control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_arrow"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "file_paths": ["Applications.*(Word)\\.app"]
+                        }
+                    ]
+                },
+                {
+                    "description": "C-a to Home on Office",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "a",
+                        "modifiers": {
+                            "mandatory": ["control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "home"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "file_paths": ["Applications.*(Word)\\.app"]
+                        }
+                    ]
+                },
+                {
+                    "description": "C-e to End on Office",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "e",
+                        "modifiers": {
+                            "mandatory": ["control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "end"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "file_paths": ["Applications.*(Word)\\.app"]
+                        }
+                    ]
+                },
+                {
+                    "description": "C-d to delete on Office",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "d",
+                        "modifiers": {
+                            "mandatory": ["control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_forward"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "file_paths": ["Applications.*(Word)\\.app"]
+                        }
+                    ]
+                },
+                {
+                    "description": "disable M-L on firefox",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": ["command"]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": ["^org\\.mozilla\\.firefox$"]
+                        }
+                    ]
+                },
+                {
+                    "description": "disable M-T on firefox",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "t",
+                        "modifiers": {
+                            "mandatory": ["command"]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": ["^org\\.mozilla\\.firefox$"]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
